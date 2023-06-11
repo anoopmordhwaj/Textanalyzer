@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Textanalyzer.in</title>
+    <style>
+        body{
+            background-image: url('https://images.unsplash.com/photo-1614854262318-831574f15f1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxpZ2h0JTIwY29sb3VyfGVufDB8fDB8fHww&w=1000&q=80');
+          background-size: 100% 100%;
+          background-attachment: fixed;
+          background-repeat: no-repeat;  
+        }
+          </style>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Textanalyzer.in</Textutils></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact">Contact us</a>
+              </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+        
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="alert alert-secondary" role="alert">
+        <strong>welcome to textutils.</strong>
+        A simple tool to maupulate your text.
+      </div>
+
+      <div class="container" >
+        <form action='/analyze' method='post'> {% csrf_token %}
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Enter your text here and let textutil do his work </label>
+            <textarea class="form-control"  name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
+          </div>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input"  name="removepunc"  id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">Remove all Punctuations</label>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <input type="checkbox"name="charcount" class="custom-control-input" id="customSwitch2">
+            <label class="custom-control-label" for="customSwitch2">Count Character</label>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <input type="checkbox"  name="lineremover" class="custom-control-input" id="customSwitch3">
+            <label class="custom-control-label" for="customSwitch3">Remove extra lines</label>
+          </div>
+
+
+          <div class="custom-control custom-switch">
+            <input type="checkbox" name="removeapos" class="custom-control-input" id="customSwitch4">
+            <label class="custom-control-label" for="customSwitch4">Remove unnecessary Apostrophes</label>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <input type="checkbox" name="spaceremover" class="custom-control-input" id="customSwitch5">
+            <label class="custom-control-label" for="customSwitch5">Remove Extra space</label>
+          </div>
+
+          <div class="custom-control custom-switch">
+            <input type="checkbox" name="uppercase" class="custom-control-input" id="customSwitch6">
+            <label class="custom-control-label" for="customSwitch6">Makes text uppercase</label>
+          </div>
+         <br>
+        <button type="submit" class="btn btn-primary">Analyse Text</button>
+    </form>
+
+      </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
